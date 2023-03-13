@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:34:38 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/09 15:53:02 by Jroldan-         ###   ########.fr       */
+/*   Updated: 2023/03/13 10:14:08 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int argc, char *argv[])
 
 	a = argc;
 	name = argv[0];
+	write(1, "\nServer PID = ", 14);
 	ft_putnbr(getpid());
+	write(1, "\n", 1);
 	return (0);
 }
