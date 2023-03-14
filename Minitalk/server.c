@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:34:38 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/14 10:46:24 by javier           ###   ########.fr       */
+/*   Updated: 2023/03/14 11:04:48 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		printf("Error\n");
+		printf("\nERROR DEMASIADOS PARAMATROS\n");
 		return (1);
 	}
 	pid = getpid();

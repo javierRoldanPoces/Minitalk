@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:27:06 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/14 10:29:44 by javier           ###   ########.fr       */
+/*   Updated: 2023/03/14 11:20:20 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-void	handler(int pid, char c)
+void	handler_client(int pid, char c)
 {
 	int	bit;
 
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
-			handler(pid, argv[2][i]);
+			handler_client(pid, argv[2][i]);
 			i++;
 		}
 	}
