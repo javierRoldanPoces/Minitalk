@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:47:22 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/09 15:54:20 by Jroldan-         ###   ########.fr       */
+/*   Updated: 2023/03/14 10:47:25 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_putstr(char *s)
 		i++;
 	}
 }
-
+/*
 int	ft_atoi(const char *str)
 {
 	int	sign;
@@ -77,6 +77,7 @@ void	recursive_binary(int x)
 		printf("%i", x % 2);
 	}
 }
+*/
 
 void	ft_putnbr(int n)
 {
