@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: javier <javier@student.42.fr>              +#+  +:+       +#+         #
+#    By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 15:09:54 by Jroldan-          #+#    #+#              #
-#    Updated: 2023/03/14 12:08:13 by javier           ###   ########.fr        #
+#    Updated: 2023/03/15 11:40:04 by Jroldan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,16 +20,17 @@ SRC_SERVER = server.c
 SRC_CLIENT = client.c
 
 OBJ_SERVER = $(SRC_SERVER:.c=.o)
-OBJ_CLIENT = $(SRC_CLIENT:.c=.0)
+OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 
 CC = gcc
 
-$(NAME_SERVER) : 
-	$(CC) $(CFLAG) $(SRC_SERVER) -o $(NAME_SERVER)
-$(NAME_CLIENT) : 
-	$(CC) $(CFLAG) $(SRC_CLIENT) -o $(NAME_CLIENT)
-	
 all : $(NAME_SERVER) $(NAME_CLIENT)
+
+$(NAME_CLIENT) : $(OBJ_CLIENT) 
+	$(CC) $(CFLAG) $(SRC_CLIENT) -o $(NAME_CLIENT)
+ss$(NAME_SERVER) : $(OBJ_SERVER)
+	$(CC) $(CFLAG) $(SRC_SERVER) -o $(NAME_SERVER)
+
 
 re : fclean all
 
