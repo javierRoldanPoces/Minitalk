@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:34:38 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/14 11:04:48 by javier           ###   ########.fr       */
+/*   Updated: 2023/03/15 17:30:55 by Jroldan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 void	handler_server(int sig)
 {
-	static int	bit;
-	static int	i;
+	static int	bit = 0;
+	static int	i = 0;
 
-	if (sig == SIGUSR1)
+	if (sig == SIGUSR1)    // esto es lo que esta fallando
+	{
+		//signal(sig, handler_server);
+		//printf("\nsignal SIGSUR1\n");
+		//printf("\nEntra en SIGSUR1");
 		i |= (0x01 << bit);
+	}
 	bit++;
+	//printf("\n Señal recibida %d. bit: %d", sig, bit);
 	if (bit == 8)
 	{
-		printf("%c", i);
+		//printf("\neNtra_Juanito");
+		printf("%c\n", i);
 		bit = 0;
 		i = 0;
 	}
