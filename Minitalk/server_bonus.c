@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:34:38 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/16 17:48:07 by Jroldan-         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:48:10 by Jroldan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	handler_server(int sig)
 {
@@ -18,7 +18,7 @@ void	handler_server(int sig)
 	static int	i = 0;
 
 	if (sig == SIGUSR1)
-		i |= (1 << bit);
+		i |= (0x01 << bit);
 	bit++;
 	if (bit == 8)
 	{
