@@ -6,7 +6,7 @@
 /*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:27:06 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/15 17:23:03 by Jroldan-         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:53:26 by Jroldan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	handler_client(int pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(1000);
+		usleep(100);
 		bit++;
 	}
 }
@@ -72,31 +72,8 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf("Error\n");
+		ft_putstr("Error\n");
 		return (1);
 	}
 	return (0);
 }
-
-/*
-int	main(int argc, char *argv[])
-{
-	int		i;
-	int		j;
-	char	*str;
-
-	str = *argv;
-	i = 0;
-	j = 0;
-	if (argc > 1)
-	{
-		//str = &argv[1];
-		while (str[j] != 0)
-		{
-			i = str[j] + 32;
-		}
-	}
-	return (0);
-	
-}
-*/

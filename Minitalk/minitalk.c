@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:47:22 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/14 10:47:25 by javier           ###   ########.fr       */
+/*   Updated: 2023/03/15 19:11:03 by Jroldan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,44 +40,6 @@ void	ft_putstr(char *s)
 		i++;
 	}
 }
-/*
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	result;
-	int	i;
-
-	sign = 1;
-	result = 0;
-	i = 0;
-	if (str[i] == '\0')
-		return (0);
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 45 || str[i] == 43)
-	{	
-		if (str[i] == 45)
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		result = result * 10;
-		result = result + (str[i] - 48);
-		i++;
-	}
-	return (result * sign);
-}
-
-void	recursive_binary(int x)
-{
-	if (x != 0)
-	{
-		recursive_binary(x / 2);
-		printf("%i", x % 2);
-	}
-}
-*/
 
 void	ft_putnbr(int n)
 {
