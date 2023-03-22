@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jroldan- <jroldan-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:59:31 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/16 19:54:19 by Jroldan-         ###   ########.fr       */
+/*   Updated: 2023/03/22 09:47:10 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,19 @@
 # include <unistd.h>
 # include <signal.h>
 # include <sys/types.h>
+# include <sys/wait.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int n);
 
-#endif
+typedef struct sigaction{
+
+    void        (*sa handler)(int);
+    void        (*sa_sigaction)(int, siginfo_t *, void *);
+    sigset_t    sa_mask;
+    int         sa_flags;
+    void        (*sa_restorer)(void);
+}               t_sigaction;
+
+#endif 
