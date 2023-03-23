@@ -3,25 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:34:38 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/21 13:32:55 by javier           ###   ########.fr       */
+/*   Updated: 2023/03/23 13:38:11 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
-#include <signal.h>
 
 void	handler_server(int sig, siginfo_t *info, void *context)
 {
 	static int	bit = 0;
 	static int	i = 0;
 
-	(void)info;
 	(void)context;
 	if (sig == SIGUSR1)
-		i |= (0x01 << bit);
+		i |= (1 << bit);
 	bit++;
 	if (bit == 8)
 	{
@@ -34,10 +32,13 @@ void	handler_server(int sig, siginfo_t *info, void *context)
 
 int	main(int argc, char **argv)
 {
-	int	pid;
-	struct sigaction	sig;
+	int					pid;
+	struct sigaction	signal1;
 
 	(void)argv;
+	sigemptyset(&signal1.sa_mask);
+	signal1.sa_sigaction = handler_server;
+	signal1.sa_flags = SA_SIGINFO;
 	if (argc != 1)
 	{
 		ft_putstr("ERROR: demasiado parámetros.....\n");
@@ -46,12 +47,10 @@ int	main(int argc, char **argv)
 	pid = getpid();
 	ft_putnbr(pid);
 	ft_putstr("\n");
-	sig.emptyset(&sig.sa_mask);
-
 	while (argc == 1)
 	{
-		signal(SIGUSR1, handler_server);
-		signal(SIGUSR2, handler_server);
+		sigaction(SIGUSR1, &signal1, NULL);
+		sigaction(SIGUSR2, &signal1, NULL);
 		pause ();
 	}
 	return (0);

@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:27:06 by Jroldan-          #+#    #+#             */
-/*   Updated: 2023/03/21 13:24:45 by javier           ###   ########.fr       */
+/*   Updated: 2023/03/23 13:41:36 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-static void confirm(int sig)
+static void	confirm(int sig)
 {
-	if (sig == SIGUSR1)
-		write(1, "Mensahe recivido\n", 17);
+	(void)sig;
+	//write(1, "Mensaje enviado\n", 16);
 }
-
 
 static int	ft_atoi(const char *str)
 {
